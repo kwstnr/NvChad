@@ -16,6 +16,18 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+lspconfig.csharp_ls.setup({
+  cmd = { "csharp-ls"},
+  filetypes = { "cs" },
+  root_dir = lspconfig.util.root_pattern("*.sln", "*.csproj", ".git"),
+  on_attach = function(_, bufnr)
+      local bufopts = { noremap = true, silent = true, buffer = bufnr }
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
+    end
+})
+
 -- configuring single server, example: typescript
 -- lspconfig.ts_ls.setup {
 --   on_attach = nvlsp.on_attach,

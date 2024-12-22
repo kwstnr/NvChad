@@ -13,6 +13,8 @@ return {
     end,
   },
 
+  { "jose-elias-alvarez/null-ls.nvim" }
+
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
