@@ -13,7 +13,9 @@ return {
     end,
   },
 
-  { "jose-elias-alvarez/null-ls.nvim" }
+  { "jose-elias-alvarez/null-ls.nvim" },
+
+  {"ellisonleao/glow.nvim", config = true, cmd = "Glow"}
 
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
