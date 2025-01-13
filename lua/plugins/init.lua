@@ -77,7 +77,7 @@ return {
 
           local command = commands[action]() .. "/r"
           vim.cmd("vsplit")
-          vim.cmd("term" .. command)
+          vim.cmd("term " .. command)
         end,
         secrets = {
           path = get_secret_path
