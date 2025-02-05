@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PlantUML Preview</title>
+  <script>
+    const ws = new WebSocket("ws://localhost:3001");
+    ws.onmessage = (event) => {
+      if (event.data === "reload") {
+        setTimeout(1500, () => {
+          console.log('delayed reload');
+          location.reload();
+        });
+      }
+    };
+</script> 
+</head>
+<body>
+  <h1>PlantUML Preview</h1>
+    <img src="diagram.svg" alt="PlantUML Diagram" style="max-width: 100%;">
+</body>
+</html>
