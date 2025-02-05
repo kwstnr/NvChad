@@ -33,6 +33,7 @@ require "options"
 require "nvchad.autocmds"
 
 require "custom.null-ls"
+require "configs.keymaps"
 
 vim.schedule(function()
   require "mappings"
