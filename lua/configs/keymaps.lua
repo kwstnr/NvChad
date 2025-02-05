@@ -17,6 +17,6 @@ end, { desc = "Open PlantUML Preview" })
 
 vim.keymap.set("n", "<leader>pk", function()
     -- Kill the server (you may need to adapt this for your system)
-    vim.fn.jobstart("pkill -f node", { detach = true })
+    vim.fn.jobstart("curl http://localhost:3000/exit", { detach = true })
     print("PlantUML server stopped.")
 end, { desc = "Stop PlantUML Server" })
