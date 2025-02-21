@@ -49,6 +49,12 @@ lspconfig.angularls.setup({
   root_dir = lspconfig.util.root_pattern("angular.json"),
 })
 
+lspconfig.clangd.setup({
+  on_atach = function(_, _)
+  end,
+  filetypes = { "c" },
+})
+
 -- configuring single server, example: typescript
 -- lspconfig.ts_ls.setup {
 --   on_attach = nvlsp.on_attach,
