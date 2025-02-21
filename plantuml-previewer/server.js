@@ -62,3 +62,8 @@ app.get('/', (req, res) => {
 app.get('/diagram.svg', (req, res) => {
   res.sendFile(__dirname + '/renders/diagram.svg');
 })
+
+app.get('/exit', (req, res) => {
+  res.status(200);
+  process.exit(1);
+})
