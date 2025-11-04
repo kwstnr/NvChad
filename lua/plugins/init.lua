@@ -136,7 +136,17 @@ return {
       --  dotnet.creatfile(path)
       --end, {})
     end
-  }
+  },
+
+  -- Debug Adapter Protocol
+  {
+    "mfussenegger/nvim-dap",
+  },
+
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+  },
 
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
