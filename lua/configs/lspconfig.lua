@@ -25,7 +25,7 @@ lspconfig.csharp_ls.setup({
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
       vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
       vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
-      vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, bufopts)
+      vim.keymap.set("n", "<leader>.", "<cmd>Telescope lsp_code_actions<cr>", bufopts)
     end
 })
 
@@ -35,7 +35,7 @@ lspconfig.ts_ls.setup({
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
-    vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set("n", "<leader>.", "<cmd>Telescope lsp_code_actions<cr>", bufopts)
   end,
 })
 
@@ -45,7 +45,7 @@ lspconfig.angularls.setup({
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
-    vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set("n", "<leader>.", "<cmd>Telescope lsp_code_actions<cr>", bufopts)
   end,
   cmd = { "ngserver", "--studio" },
   filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx" },
