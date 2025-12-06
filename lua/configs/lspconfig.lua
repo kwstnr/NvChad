@@ -64,6 +64,25 @@ lspconfig.clangd.setup({
   filetypes = { "c" },
 })
 
+lspconfig.rust_analyzer.setup({
+  on_attach = function(_, bufnr)
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
+    vim.keymap.set("n", "<leader>.", function()
+      vim.lsp.buf.code_action()
+    end, bufopts)
+  end,
+  settings = {
+    ["rust-analyzer"] = {
+      checkOnSave = {
+        command = "clippy",
+      },
+    },
+  },
+})
+
 -- configuring single server, example: typescript
 -- lspconfig.ts_ls.setup {
 --   on_attach = nvlsp.on_attach,
